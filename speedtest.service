@@ -1,0 +1,11 @@
+[Unit]
+Description=Run a speedtest
+After=network.target
+
+[Service]
+Type=simple
+User=zabbix
+ExecStart=/etc/zabbix/script/speedtest.sh -a
+
+[Install]
+WantedBy=multi-user.target

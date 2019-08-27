@@ -1,0 +1,9 @@
+[Unit]
+Description=Run a speedtest every 10 minutes
+
+[Timer]
+OnCalendar=*:0/10
+# RandomizedDelaySec=30
+
+[Install]
+WantedBy=timers.target
