@@ -28,7 +28,7 @@ copy speedtest.service and speedtest.timer to /etc/systemd/system
 ~$ cp speedtest.service speedtest.timer /etc/systemd/system
 
 and enable timer:
-~$ systemctl enable --now speedtest.time
+~$ systemctl enable --now speedtest.timer
 
 Step 3: Import template_speedtest.xml to Zabbix server
 
