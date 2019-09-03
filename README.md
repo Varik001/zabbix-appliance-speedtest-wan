@@ -25,10 +25,10 @@ copy speedtest.conf to zabbix_agentd.d folder
 ~$ sudo cp ./speedtest.conf /etc/zabbix/zabbix_agentd.d/
 
 copy speedtest.service and speedtest.timer to /etc/systemd/system
-~$ cp speedtest.service speedtest.timer /etc/systemd/system
+~$ sudo cp speedtest.service speedtest.timer /etc/systemd/system
 
 and enable timer:
-~$ systemctl enable --now speedtest.timer
+~$ sudo systemctl enable --now speedtest.timer
 
 Step 3: Import template_speedtest.xml to Zabbix server
 
