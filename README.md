@@ -21,8 +21,8 @@ copy speedtest.sh to zabbix script folder
 and make it executable
 ~$ sudo chmod +x /etc/zabbix/script/speedtest.sh
 
-copy speedtest.conf to zabbix_agentd.d folder
-~$ sudo cp ./speedtest.conf /etc/zabbix/zabbix_agentd.d/
+copy speedtest.conf to zabbix_agentd.conf.d folder
+~$ sudo cp ./speedtest.conf /etc/zabbix/zabbix_agentd.conf.d/
 
 copy speedtest.service and speedtest.timer to /etc/systemd/system
 ~$ sudo cp speedtest.service speedtest.timer /etc/systemd/system
