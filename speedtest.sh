@@ -2,7 +2,7 @@
 
 set -e
 
-CACHE_FILE=/var/log/zabbix-speedtest.log
+CACHE_FILE=/var/log/zabbix/zabbix_speedtest.log
 LOCK_FILE=/run/lock/zabbix-speedtest.lock
 
 SPEEDTEST_CMD=speedtest-cli
@@ -46,8 +46,6 @@ run_speedtest() {
 		echo "$output"
 
 	} > "$CACHE_FILE"
-
-	CACHE_FILE=/etc/zabbix/script/speedtest.log
 
 	# Make sure to remove the lock file (may be redundant)
 	rm -rf "$LOCK_FILE"

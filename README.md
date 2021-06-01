@@ -19,7 +19,8 @@ yum -y install epel-release
 yum -y install speedtest-cli
 ```
 
-Test if it work!
+Test if it works!
+
 ```bash
 speedtest-cli --simple
 ```
@@ -31,9 +32,9 @@ sudo mkdir /etc/zabbix/script
 sudo mkdir         /run/lock/zabbix-speedtest
 sudo chown zabbix: /run/lock/zabbix-speedtest
 
-touch              /var/log/zabbix-speedtest.log
-sudo chown zabbix: /var/log/zabbix-speedtest.log
-chmod 640          /var/log/zabbix-speedtest.log
+touch              /var/log/zabbix/zabbix_speedtest.log
+sudo chown zabbix: /var/log/zabbix/zabbix_speedtest.log
+chmod 640          /var/log/zabbix/zabbix_speedtest.log
 ```
 
 copy speedtest.sh to Zabbix script folder
