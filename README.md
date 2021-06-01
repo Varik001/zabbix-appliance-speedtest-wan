@@ -24,9 +24,16 @@ Test if it work!
 speedtest-cli --simple
 ```
 
-Step 2: Create folder for scripts and copy files.
+Step 2: Create some folders for scripts and stuff and make writable:
 ```bash
 sudo mkdir /etc/zabbix/script
+
+sudo mkdir         /run/lock/zabbix-speedtest
+sudo chown zabbix: /run/lock/zabbix-speedtest
+
+touch              /var/log/zabbix-speedtest.log
+sudo chown zabbix: /var/log/zabbix-speedtest.log
+chmod 640          /var/log/zabbix-speedtest.log
 ```
 
 copy speedtest.sh to Zabbix script folder

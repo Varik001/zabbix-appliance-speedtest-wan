@@ -2,8 +2,8 @@
 
 set -e
 
-CACHE_FILE=/etc/zabbix/script/speedtest.log
-LOCK_FILE=/etc/zabbix/script/speedtest.lock
+CACHE_FILE=/var/log/zabbix-speedtest.log
+LOCK_FILE=/run/lock/zabbix-speedtest.lock
 
 SPEEDTEST_CMD=speedtest-cli
 #SPEEDTEST_CMD=speedtest
