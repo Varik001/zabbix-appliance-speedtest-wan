@@ -23,6 +23,7 @@ Test if it work!
 ```bash
 speedtest-cli --simple
 ```
+
 Step 2: Create folder for scripts and copy files.
 ```bash
 sudo mkdir /etc/zabbix/script
