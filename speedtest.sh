@@ -2,8 +2,11 @@
 
 set -e
 
-CACHE_FILE=/etc/zabbix/script/speedtest.log
-LOCK_FILE=/etc/zabbix/script/speedtest.lock
+CACHE_FILE=/var/log/zabbix/zabbix_speedtest.log
+LOCK_FILE=/run/lock/zabbix-speedtest.lock
+
+SPEEDTEST_CMD=speedtest-cli
+#SPEEDTEST_CMD=speedtest
 
 run_speedtest() {
 	# Lock
@@ -23,12 +26,12 @@ run_speedtest() {
 	#Check if argument supplied to function, exec speedtest command and save output
 	if [ -z "$1" ]
 	then
-		output=$(speedtest --simple)
+		output=$("$SPEEDTEST_CMD" --simple)
 	else
-		output=$(speedtest --server "$1" --simple)
+		output=$("$SPEEDTEST_CMD" --server "$1" --simple)
 		CACHE_FILE+="_$1"
 	fi
-	
+
 	#Debug
 	#echo "Output: $output"
 
@@ -41,10 +44,8 @@ run_speedtest() {
 	#Send value to CACHE_FILE
 	{
 		echo "$output"
-		
+
 	} > "$CACHE_FILE"
-	
-	CACHE_FILE=/etc/zabbix/script/speedtest.log
 
 	# Make sure to remove the lock file (may be redundant)
 	rm -rf "$LOCK_FILE"
